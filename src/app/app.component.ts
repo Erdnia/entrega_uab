@@ -6,5 +6,32 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'practica03';
+  title = 'practica3';
+  mensaje="no hay saldo"
+  visualizaDiv=false;
+
+  array=[
+   {
+    nombre:'pedro',
+    apellido: 'vera'
+   },
+   {
+    nombre:'juan',
+    apellido: 'murcia'
+   },
+   {
+    nombre:'luis',
+    apellido: 'cordero'
+
+   }
+
+
+  ];
+
+visualiza(){
+
+  this.visualizaDiv=!this.visualizaDiv;
+}
+
+
 }
