@@ -1,1 +1,36 @@
-<p>heroes works!</p>
+
+      <div class="container mt-5">
+        <div  class="row row-cols-1 row-cols-md-3 g-4">  
+         
+              <h2>Heroes Marvel y DC</h2>  
+            
+            </div>
+               <hr>
+          </div>
+        
+
+      <div class="container mt-5">
+
+
+
+
+        <div  class="row row-cols-1 row-cols-md-3 g-4">
+          <div *ngFor="let heroes of heroes ">
+          <div class="col">
+            <div class="card">
+              <img src="{{heroes.img}}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{heroes.nombre}}</h5>
+                <p class="card-text">{{heroes.bio}}</p>
+                <p class="card-text"><small class="text-muted">{{heroes.aparicion}}</small></p>
+                <button type="button" class="btn btn-outline-primary" [routerLink]="['/heroe', heroes.id]">Ver más</button>
+              </div>
+            </div>
+          </div>
+          </div> 
+
+
+
+      </div>
+          </div>
+

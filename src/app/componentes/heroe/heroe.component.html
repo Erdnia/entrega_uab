@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <h2 class="text-uppercase mt-3">{{nombreDetalle}} ({{nacimiento}}) </h2>
+      <img class="imagen" src="{{heroes[id-1].img}}"  alt="...">
+      <br>
+      <button type="button" class="btn btn-danger mt-3 moverboton" [routerLink]="['/heroes']">Regresar</button>
+    </div>
+    <div class="col mt-5">
+      <h4>{{nombreDetalle}}</h4>
+      <hr>
+      <p>{{heroes[id-1].bio}}</p>
+      <div *ngIf="heroes[id-1].casa=='Marvel'">
+        <img class="lacasaM" src="assets\img\marvel.png"  alt="...">
+      </div>
+      <div *ngIf="heroes[id-1].casa=='DC'">
+        <img  class="lacasaDC" src="assets\img\DC.jpg"  alt="...">
+      </div>
+      
+
+    </div>
+  </div>
+</div>
