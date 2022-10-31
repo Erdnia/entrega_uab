@@ -1,18 +1,23 @@
 .imagen{
 height: 300px;
-width: 300px;
+width: 320px;
 
 }
 .moverboton{
 
-    margin-left: 105px;
+    margin-left: 5px;
+    padding: 6px 120px;
+
 }
 .lacasaM{
     height: 200px;
     width: 300px;
 }
 .lacasaDC{
-    height: 200px;
-    width: 200px;
+    height: 250px;
+    width: 250px;
 
+}
+.longitud{
+    padding: 10px 20px;
 }
