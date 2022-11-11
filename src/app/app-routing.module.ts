@@ -5,6 +5,7 @@ import { HomeComponent } from './componentes/home/home.component';
 import { HeroesComponent } from './componentes/heroes/heroes.component';
 import { AboutComponent } from './componentes/about/about.component';
 import { HeroeComponent } from './componentes/heroe/heroe.component';
+import { BusquedaComponent } from './componentes/busqueda/busqueda.component';
 
 
 
@@ -18,6 +19,7 @@ const routes: Routes = [
 {path:'heroes',component:HeroesComponent},
 {path: 'about',component:AboutComponent},
 {path: 'home',component:HomeComponent},
+{path:'busqueda/:id',component:BusquedaComponent},
 {path:'**',component:HeroesComponent},
 
 

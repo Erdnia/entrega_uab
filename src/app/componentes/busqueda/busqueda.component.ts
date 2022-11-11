@@ -1,16 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute,Router } from '@angular/router';
 
 @Component({
-  selector: 'app-heroe',
-  templateUrl: './heroe.component.html',
-  styleUrls: ['./heroe.component.css']
+  selector: 'app-busqueda',
+  templateUrl: './busqueda.component.html',
+  styleUrls: ['./busqueda.component.css']
 })
-export class HeroeComponent implements OnInit {
-
-
-  id:any;
-
+export class BusquedaComponent implements OnInit {
 
   heroes=[
 
@@ -72,38 +68,39 @@ export class HeroeComponent implements OnInit {
     }
   
   ];
+ 
+
+  resultados:string[]=[];
+
+id:any;
+cont=0;
 
 
-  nombreDetalle: any;
-  nacimiento:any;
-  bioDetalle:any;
-  imgDetalle:any;
-  aparicionDetalle:any;
-  imgCasa:any;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute,private router:Router) { }
 
   ngOnInit(): void {
     this.id=this.route.snapshot.paramMap.get('id')
-    
 
-      
     for (let i = 0; i <this.heroes.length; i++) {
-      if (this.id == this.heroes[i].id || this.heroes[i].nombre.toLowerCase().indexOf(this.id.toLowerCase()) >=0){
+      if (this.heroes[i].nombre.toLowerCase().indexOf(this.id.toLowerCase()) >=0)
         {
-        this.nombreDetalle=this.heroes[i].nombre;
-        this.bioDetalle=this.heroes[i].bio;
-        this.imgDetalle=this.heroes[i].img;
-        this.aparicionDetalle=this.heroes[i].aparicion;
-        this.imgCasa=this.heroes[i].casa;
+        this.resultados[this.cont]=this.heroes[i].id; 
+        this.cont++;
+        
       }
       
-    }
 
   }
-
-
+  
+  if(this.cont==1){
+    this.router.navigate(['/heroe', this.id]);
   }
+  
+ console.log(this.resultados);
+}
+
+
 
 
 }

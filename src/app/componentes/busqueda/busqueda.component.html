@@ -1,0 +1,44 @@
+<div class="container mt-5">
+    <div  class="row row-cols-1 row-cols-md-3 g-4">  
+
+     <h3>Resultado:</h3>  
+     
+   
+   </div>
+      <hr>
+
+      <div *ngIf="this.cont==0" class="col mb-5">
+      <h2>No se ha encontrado ningún héroe</h2>
+      <img src="\assets\img\error.jpg" class="img-fluid" alt="Responsive image">
+      
+      </div>
+
+      
+
+
+      
+      <div  class="row row-cols-1 row-cols-md-3 g-4  ">
+        <div *ngFor="let id of resultados">
+        <div *ngFor="let heroes of heroes ">
+          
+        <div *ngIf="id==heroes.id" class="col">
+          
+          <div class="card">
+            <img src="{{heroes.img}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{heroes.nombre}}</h5>
+              <p class="card-text">{{heroes.bio}}</p>
+              <p class="card-text"><small class="text-muted">{{heroes.aparicion}}</small></p>
+              <button type="button" class="btn btn-outline-primary tamano" [routerLink]="['/heroe', heroes.id]">Ver más</button>
+            </div>
+          </div>
+        </div>
+        
+        </div> 
+
+        </div>
+        
+
+
+
+
